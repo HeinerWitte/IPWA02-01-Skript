@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h2>Login</h2>
+    <h:form>
+        <h:panelGrid columns="2" >
+            <h:outputLabel value="Benutzername:" for="name"/>
+            <h:inputText id="name" value="#{anmeldedaten.name}" size="25" />
+                <f:event type="javax.faces.event.PostValidateEvent"
+                listener="#{anmeldedaten.postValidateName}" />
+            <h:outputLabel value="Passwort: " for="pass" />
+            <h:inputSecret id="pass" value=" #{anmeldedaten.passwort}"
+                           required="true"
+                           validator="#{anmeldedaten.validateLogin}" size="25"/>
+            <h:commandLink value="login" action="#{benutzer.login()}" />
+        </h:panelGrid>
+    </h:form>
+    </body>
+</html>

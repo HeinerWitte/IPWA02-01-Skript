@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css"/>
+  <title>Artikelverwaltung</title>
+</h:head>
+<h:body>  
+  <img src="Bild.jpg" alt=""/>
+  <h1>Weltweite CO<sub>2</sub>-Emissionen</h1>
+  <h2>Ländertabelle mit Angabe der Jahre und Emissionsmengen</h2>
+  <h:form>          
+      <h3>Emissionstabelle</h3>
+                 
+            <p:dataTable var="data" value="#{Emissionen.dataList}">
+                <p:column headerText="Ländername">
+                    <h:outputText value="#{dataList.Ländername}" />
+                </p:column>
+                <p:column headerText="Ländercode">
+                    <h:outputText value="#{dataList.Ländercode}" />
+                </p:column>
+                <p:column headerText="Indikatorname">
+                    <h:outputText value="#{dataList.Indikatorname}" />
+                </p:column>
+                <p:column headerText="Indikatorcode">
+                    <h:outputText value="#{dataList.Indikatorcode}" />
+                </p:column>
+                <p:column headerText="Jahr">
+                    <h:outputText value="#{dataList.Jahr}" />
+                </p:column>
+                <p:column headerText="Emissionen [kt]">
+                    <h:outputText value="#{dataList.Emissionen [kt]}" />
+                </p:column>
+            </p:dataTable>
+      
+  </h:form>
+  <p id="fussnote">Bitte beachten Sie: <br/> Die Daten haben den Stand 21.04.2023</p>
+</h:body>
+</html>
